@@ -1,0 +1,1 @@
+replace ~/.config/karabiner/karabiner.json with symlink to project
