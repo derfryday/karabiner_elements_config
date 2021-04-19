@@ -761,37 +761,8 @@
             ]
         },
         {
-            "description": "use ctrl+shift+c/v for terminal instead of super+c/v",
-            "manipulators": [
-                {
-                    "from": {
-                        "key_code": "c",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_control",
-                                "left_shift"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "c",
-                            "modifiers": [
-                                "left_command"
-                            ]
-              
-                        }
-                    ],
-                    "conditions": [
-                        {
-                          "type": "frontmost_application_if",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
-                          ]
-                        }
-                    ],
-                    "type": "basic"
-                },
+            "description": "paste without formatting Ctrl+Shift+V",
+            "manipulators": [                                         
                 {
                     "from": {
                         "key_code": "v",
@@ -806,24 +777,51 @@
                         {
                             "key_code": "v",
                             "modifiers": [
-                                "left_command"
+                                "left_command",
+                                "left_option",
+                                "left_shift"
                             ]
               
                         }
                     ],
                     "conditions": [
                         {
-                          "type": "frontmost_application_if",
+                          "type": "frontmost_application_unless",
                           "file_paths": [                            
                             "/Applications/iTerm.app/Contents/MacOS/iTerm2"
                           ]
                         }
                     ],
                     "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "left/right word skip with [ctrl] instead of [alt]",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "left_arrow",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+              
+                        }
+                    ],
+                    "type": "basic"
                 },
                 {
                     "from": {
-                        "key_code": "t",
+                        "key_code": "left_arrow",
                         "modifiers": {
                             "mandatory": [
                                 "left_control",
@@ -833,26 +831,39 @@
                     },
                     "to": [
                         {
-                            "key_code": "t",
+                            "key_code": "left_arrow",
                             "modifiers": [
-                                "left_command"
+                                "left_option",
+                                "left_shift"
                             ]
               
-                        }
-                    ],
-                    "conditions": [
-                        {
-                          "type": "frontmost_application_if",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
-                          ]
                         }
                     ],
                     "type": "basic"
                 },
                 {
                     "from": {
-                        "key_code": "w",
+                        "key_code": "right_arrow",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+              
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "right_arrow",
                         "modifiers": {
                             "mandatory": [
                                 "left_control",
@@ -862,19 +873,12 @@
                     },
                     "to": [
                         {
-                            "key_code": "w",
+                            "key_code": "right_arrow",
                             "modifiers": [
-                                "left_command"
+                                "left_option",
+                                "left_shift"
                             ]
               
-                        }
-                    ],
-                    "conditions": [
-                        {
-                          "type": "frontmost_application_if",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
-                          ]
                         }
                     ],
                     "type": "basic"
