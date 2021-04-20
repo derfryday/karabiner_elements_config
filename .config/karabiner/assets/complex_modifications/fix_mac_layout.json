@@ -275,8 +275,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -303,8 +303,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -333,8 +333,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -361,8 +361,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -389,8 +389,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -422,8 +422,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -452,8 +452,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -487,6 +487,140 @@
             ]
         },
         {
+            "description": "fix global find shortcut",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "f",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "f",
+                            "modifiers": [
+                                "left_command",
+                                "left_shift"
+                            ]
+              
+                        }
+                    ],
+                    "conditions": [
+                        {
+                          "type": "frontmost_application_unless",
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
+                          ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "fix webdev shortcuts for Firefox,Chrome,Safari (Ctrl+Shift+[IC])",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "h",
+                            "modifiers": [
+                                "left_command",
+                                "left_shift"
+                            ]
+              
+                        }
+                    ],
+                    "conditions": [
+                        {
+                          "type": "frontmost_application_if",
+                          "bundle_identifiers": [                            
+                            "^com\\.microsoft\\.VSCode$"
+                          ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "i",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "i",
+                            "modifiers": [
+                                "left_command",
+                                "left_option"
+                            ]
+              
+                        }
+                    ],
+                    "conditions": [
+                        {
+                          "type": "frontmost_application_if",
+                          "bundle_identifiers": [                            
+                            "^com\\.google\\.Chrome$",
+                            "^org\\.mozilla\\.firefox$",
+                            "^com\\.apple\\.Safari$"
+                          ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                                {
+                    "from": {
+                        "key_code": "c",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "c",
+                            "modifiers": [
+                                "left_command",
+                                "left_shift"
+                            ]
+              
+                        }
+                    ],
+                    "conditions": [
+                        {
+                          "type": "frontmost_application_if",
+                          "bundle_identifiers": [                            
+                            "^com\\.google\\.Chrome$",
+                            "^org\\.mozilla\\.firefox$",
+                            "^com\\.apple\\.Safari$"
+                          ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
             "description": "fix edit addressbar shortcut",
             "manipulators": [
                 {
@@ -510,8 +644,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -520,7 +654,7 @@
             ]
         },
         {
-            "description": "fix open/save/save as shortcut (excluding iTerm2)",
+            "description": "fix open/save/save as/save all shortcut (excluding iTerm2)",
             "manipulators": [
                 {
                     "from": {
@@ -543,8 +677,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -573,8 +707,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -601,8 +735,38 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
+                          ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "s",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "s",
+                            "modifiers": [
+                                "left_command",
+                                "left_option"
+                            ]
+              
+                        }
+                    ],
+                    "conditions": [
+                        {
+                          "type": "frontmost_application_unless",
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -634,8 +798,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -644,7 +808,70 @@
             ]
         },
         {
-            "description": "fix select/cut/copy/paste shortcut (exluding iTerm2)",
+            "description": "fix copy/paste in terminal",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "c",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "c",
+                            "modifiers": [
+                                "left_command"
+                            ]
+              
+                        }
+                    ],
+                    "conditions": [
+                        {
+                          "type": "frontmost_application_if",
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
+                          ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                                {
+                    "from": {
+                        "key_code": "v",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "v",
+                            "modifiers": [
+                                "left_command"
+                            ]
+              
+                        }
+                    ],
+                    "conditions": [
+                        {
+                          "type": "frontmost_application_if",
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
+                          ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "fix select/cut/copy/paste shortcut (excluding iTerm2)",
             "manipulators": [
                 {
                     "from": {
@@ -667,8 +894,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -695,8 +922,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -723,8 +950,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -751,8 +978,8 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
                           ]
                         }
                     ],
@@ -787,8 +1014,75 @@
                     "conditions": [
                         {
                           "type": "frontmost_application_unless",
-                          "file_paths": [                            
-                            "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+                          "bundle_identifiers": [                            
+                            "^com\\.googlecode\\.iterm2$"
+                          ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "fix pattern/command shortcut (Ctrl+P,Ctrl+Shift+P) for Text Editors",
+            "manipulators": [                                         
+                {
+                    "from": {
+                        "key_code": "p",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "p",
+                            "modifiers": [
+                                "left_command"
+                            ]
+              
+                        }
+                    ],
+                    "conditions": [
+                        {
+                          "type": "frontmost_application_if",
+                          "bundle_identifiers": [                            
+                            "^com\\.jetbrains\\.pycharm$",
+                            "^com\\.sublimetext\\.3$",
+                            "^com\\.microsoft\\.VSCode$"
+                          ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                                {
+                    "from": {
+                        "key_code": "p",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "p",
+                            "modifiers": [
+                                "left_command",
+                                "left_shift"
+                            ]
+              
+                        }
+                    ],
+                    "conditions": [
+                        {
+                          "type": "frontmost_application_if",
+                          "bundle_identifiers": [                            
+                            "^com\\.jetbrains\\.pycharm$",
+                            "^com\\.sublimetext\\.3$",
+                            "^com\\.microsoft\\.VSCode$"
                           ]
                         }
                     ],
@@ -879,6 +1173,41 @@
                                 "left_shift"
                             ]
               
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "use cmd+c instead of ctrl+c for stopping scripts etc. in PyCharm and VSCode",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "c",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "c",
+                            "modifiers": [
+                                "left_control"
+                            ]
+              
+                        }
+                    ],
+                    "conditions": [
+                              {
+                          "type": "frontmost_application_if",
+                          "bundle_identifiers": [                            
+                            "^com\\.jetbrains\\.pycharm$",
+                            "^com\\.sublimetext\\.3$",
+                            "^com\\.microsoft\\.VSCode$"
+                          ]
                         }
                     ],
                     "type": "basic"
