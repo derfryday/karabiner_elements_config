@@ -1,5 +1,5 @@
-replace `~/.config/karabiner/karabiner.json` with symlink to the same file inside the project
-replace `~/.config/karabiner/assets/complex_modifications` with with to the same directory inside the project
+replace `~/.config/karabiner/karabiner.json` with a symlink to the same file inside the project
+replace `~/.config/karabiner/assets/complex_modifications` with a symlink to the same directory inside the project
 
 from within the project root:
 ```
